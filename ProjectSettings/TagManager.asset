@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Player
+  - Enemy
+  - Loot
+  - Chest
+  - PatrolPoint
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1358692095
+    locked: 0
+  - name: Decorations
+    uniqueID: 3026184927
+    locked: 0
+  - name: Platforms
+    uniqueID: 3013320213
+    locked: 0
+  - name: Character
+    uniqueID: 2299722695
+    locked: 0
+  - name: Vignette
+    uniqueID: 3304596477
+    locked: 0
