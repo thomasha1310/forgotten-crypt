@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombatController : MonoBehaviour
+public class PlayerCombatControllerOld : MonoBehaviour
 {
     [SerializeField] private GameObject healingRelic;
     [SerializeField] private GameObject protectionRelic;

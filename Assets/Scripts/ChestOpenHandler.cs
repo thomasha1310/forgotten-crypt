@@ -18,9 +18,9 @@ public class ChestOpenHandler : MonoBehaviour
     {
         transform.GetChild(0).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
         transform.GetChild(1).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
-        //transform.GetChild(2).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
-        //transform.GetChild(3).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
-        //transform.GetChild(4).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
+        transform.GetChild(2).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
+        transform.GetChild(3).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
+        transform.GetChild(4).gameObject.transform.GetChild(3).GetComponent<BoxCollider2D>().enabled = false;
 
     }
 

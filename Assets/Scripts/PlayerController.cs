@@ -107,11 +107,6 @@ public class PlayerController : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -175,7 +170,7 @@ public class PlayerController : MonoBehaviour
                 SetAnimationState(AnimationState.kAttack);
                 return;
             }
-            else if (isZeroish(rb.velocity.x))
+            else if (IsZeroish(rb.velocity.x))
             {
                 SetAnimationState(AnimationState.kIdle);
                 return;
@@ -201,7 +196,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool isZeroish(float v)
+    private bool IsZeroish(float v)
     {
         return Mathf.Abs(v) < 0.001f;
     }
@@ -220,7 +215,7 @@ public class PlayerController : MonoBehaviour
         float vx = rb.velocity.x;
 
         // turning around?
-        if (!isZeroish(horizontal) && (Mathf.Sign(vx) != Mathf.Sign(horizontal)))
+        if (!IsZeroish(horizontal) && (Mathf.Sign(vx) != Mathf.Sign(horizontal)))
         {
             vx = 0;
         }
@@ -230,7 +225,7 @@ public class PlayerController : MonoBehaviour
         float r = Mathf.Abs(horizontal) > 0 ? acceleration : deceleration;
 
         vx = Mathf.Lerp(vx, horizontal * speed, r);
-        if (isZeroish(horizontal) && Mathf.Abs(vx) < 0.5f)
+        if (IsZeroish(horizontal) && Mathf.Abs(vx) < 0.5f)
         {
             vx = 0.0f;
         }

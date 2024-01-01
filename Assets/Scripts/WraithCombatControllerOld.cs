@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WraithCombatController : MonoBehaviour
+public class WraithCombatControllerOld : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private float maxSpeed = 6;
