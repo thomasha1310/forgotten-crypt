@@ -31,7 +31,8 @@ public class WraithCombatControllerOld : MonoBehaviour
         kPursue,
         kAttack,
         kJump,
-        kPatrol
+        kPatrol,
+        kWait
     }
 
     private State state = State.kDefault;
@@ -76,9 +77,14 @@ public class WraithCombatControllerOld : MonoBehaviour
                 state = State.kAttack;
                 return;
             }
-            else
+            else if (distanceToPlayer > 2.0)
             {
                 state = State.kPursue;
+                return;
+            }
+            else
+            {
+                state = State.kWait;
                 return;
             }
         }
@@ -125,11 +131,10 @@ public class WraithCombatControllerOld : MonoBehaviour
     {
         if (state == State.kAttack)
         {
-            rb.velocity = new Vector2(rb.velocity.x / 4, rb.velocity.y);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-
-        if (state == State.kPursue)
+        if (state == State.kPursue || state == State.kWait)
         {
             direction = Mathf.RoundToInt(Mathf.Sign(player.transform.position.x - transform.localPosition.x));
         }
@@ -149,17 +154,22 @@ public class WraithCombatControllerOld : MonoBehaviour
         float velocityx;
         if (direction > 0)
         {
-            velocityx = Mathf.Min(maxSpeed, rb.velocity.x + acceleration * direction);
+            velocityx = Mathf.Min(maxSpeed, Mathf.Abs(rb.velocity.x) + acceleration);
         }
         else
         {
-            velocityx = Mathf.Max(-maxSpeed, rb.velocity.x + acceleration * direction);
+            velocityx = Mathf.Max(-maxSpeed, -(Mathf.Abs(rb.velocity.x) + acceleration));
+        }
+
+        if (state == State.kWait)
+        {
+            velocityx *= -0.5f;
         }
 
         transform.localScale = new Vector3(2 * direction, 2, 2);
 
         float velocityy = rb.velocity.y;
-        if (Physics2D.OverlapCircle(wallSensor.position, 0.6f, collisionLayer))
+        if (Physics2D.OverlapCircle(wallSensor.position, 0.2f, collisionLayer))
         {
             velocityy = jumpingPower;
         }
