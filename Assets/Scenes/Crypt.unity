@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 456599026}
   - component: {fileID: 456599027}
   m_Layer: 10
-  m_Name: Gem
+  m_Name: Amethyst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,6 +823,63 @@ Transform:
   - {fileID: 456599025}
   m_Father: {fileID: 1861581532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &605299564
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1490545110489199356, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_Name
+      value: Soul
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3615153713749324231, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de5f1276c7e0f45d2b807e763e285a3b, type: 3}
 --- !u!1 &617215170
 GameObject:
   m_ObjectHideFlags: 0
@@ -57362,7 +57419,7 @@ GameObject:
   - component: {fileID: 776441665}
   - component: {fileID: 776441664}
   m_Layer: 10
-  m_Name: Gem
+  m_Name: Emerald
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57524,7 +57581,7 @@ GameObject:
   - component: {fileID: 924682728}
   - component: {fileID: 924682727}
   m_Layer: 10
-  m_Name: Gem
+  m_Name: Sapphire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57738,7 +57795,7 @@ GameObject:
   - component: {fileID: 1044886879}
   - component: {fileID: 1044886878}
   m_Layer: 10
-  m_Name: Gem
+  m_Name: Ruby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57868,7 +57925,7 @@ GameObject:
   - component: {fileID: 1116198424}
   - component: {fileID: 1116198423}
   m_Layer: 10
-  m_Name: Gem
+  m_Name: Onyx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59925,8 +59982,11 @@ GameObject:
   - component: {fileID: 1767116962}
   - component: {fileID: 1767116963}
   - component: {fileID: 1767116966}
-  - component: {fileID: 1767116968}
+  - component: {fileID: 1767116976}
+  - component: {fileID: 1767116975}
   - component: {fileID: 1767116969}
+  - component: {fileID: 1767116974}
+  - component: {fileID: 1767116968}
   - component: {fileID: 1767116973}
   - component: {fileID: 1767116972}
   - component: {fileID: 1767116971}
@@ -60143,7 +60203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767116958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bad221ef5a31744f9ba25af03d9a7616, type: 3}
   m_Name: 
@@ -60160,7 +60220,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767116958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 695de4fa84d50446e92f813c27a0e079, type: 3}
   m_Name: 
@@ -60177,7 +60237,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767116958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ad2bd0c07e224d479ee343fe6fcdebc, type: 3}
   m_Name: 
@@ -60213,7 +60273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767116958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8141057e63624e2dbbb3ba23850092b, type: 3}
   m_Name: 
@@ -60225,6 +60285,52 @@ MonoBehaviour:
   foresightRelic: {fileID: 776441662}
   mainCamera: {fileID: 519420028}
   vignette: {fileID: 1276293354}
+--- !u!114 &1767116974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767116958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4437b66008681d44a49359e3920a029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1767116975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767116958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338075cc79b0a4104b082ba687b00540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpStrength: 11
+  shouldUseEnhancedJumping: 1
+  coyoteTime: 0.1
+  jumpBufferTime: 0.1
+  movementSmoothing: 0.05
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  groundSensor: {fileID: 298151750}
+  runSpeed: 20
+--- !u!114 &1767116976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767116958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a2894a71ebb46bab863ae125818b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1806116341
 GameObject:
   m_ObjectHideFlags: 0
@@ -60732,3 +60838,4 @@ SceneRoots:
   - {fileID: 1861581532}
   - {fileID: 795466386}
   - {fileID: 1969493216}
+  - {fileID: 605299564}
