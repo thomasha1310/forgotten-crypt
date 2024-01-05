@@ -8,7 +8,8 @@ public class PlayerInputManager : InputManager
     private bool shouldJump = false;
 
     private float jumpButtonDownDuration = 0;
-    private float stickyKeyDuration = 0.5f;
+    private float stickyKeyDuration = 0.2f;
+    private bool stickyKeyOverride = false;
 
     private bool wasJumping = false;
 
@@ -19,6 +20,10 @@ public class PlayerInputManager : InputManager
 
     public override bool getJumpInput()
     {
+        if (stickyKeyOverride)
+        {
+            return false;
+        }
         return shouldJump;
     }
 
@@ -40,7 +45,12 @@ public class PlayerInputManager : InputManager
 
         if (jumpButtonDownDuration > stickyKeyDuration)
         {
+            stickyKeyOverride = true;
+        }
 
+        if (!shouldJump)
+        {
+            stickyKeyOverride = false;
         }
     }
 

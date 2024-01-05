@@ -59321,8 +59321,9 @@ GameObject:
   - component: {fileID: 1455425092}
   - component: {fileID: 1455425091}
   - component: {fileID: 1455425095}
+  - component: {fileID: 1455425100}
+  - component: {fileID: 1455425099}
   - component: {fileID: 1455425097}
-  - component: {fileID: 1455425096}
   - component: {fileID: 1455425098}
   m_Layer: 8
   m_Name: Wraith 3
@@ -59492,18 +59493,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1455425096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455425090}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8444045d345564b9d8c2d80528fc0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1455425097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59541,6 +59530,40 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1455425099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455425090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338075cc79b0a4104b082ba687b00540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpStrength: 10
+  shouldUseEnhancedJumping: 1
+  coyoteTime: 0.1
+  jumpBufferTime: 0.05
+  movementSmoothing: 0.05
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  groundSensor: {fileID: 0}
+  runSpeed: 40
+--- !u!114 &1455425100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455425090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366f22bab4279c5478495494a370fcbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495327173
 GameObject:
   m_ObjectHideFlags: 0
@@ -59985,8 +60008,6 @@ GameObject:
   - component: {fileID: 1767116976}
   - component: {fileID: 1767116975}
   - component: {fileID: 1767116969}
-  - component: {fileID: 1767116974}
-  - component: {fileID: 1767116968}
   - component: {fileID: 1767116973}
   - component: {fileID: 1767116972}
   - component: {fileID: 1767116971}
@@ -60162,28 +60183,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1767116968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767116958}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4922c8db937d8244bbc774a54dc8a99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpStrength: 11
-  shouldUseEnhancedJumping: 1
-  coyoteTime: 0.1
-  jumpBufferTime: 0.1
-  movementSmoothing: 0.05
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  groundSensor: {fileID: 298151750}
-  runSpeed: 20
 --- !u!114 &1767116969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60285,18 +60284,6 @@ MonoBehaviour:
   foresightRelic: {fileID: 776441662}
   mainCamera: {fileID: 519420028}
   vignette: {fileID: 1276293354}
---- !u!114 &1767116974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767116958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4437b66008681d44a49359e3920a029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1767116975
 MonoBehaviour:
   m_ObjectHideFlags: 0
