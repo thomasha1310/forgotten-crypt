@@ -6,25 +6,33 @@ public class PlayerInputManager : InputManager
 {
     private float horizontalInput;
     private bool shouldJump = false;
+    private bool shouldAttack = false;
 
+    // variables used for sticky jump key
     private float jumpButtonDownDuration = 0;
-    private float stickyKeyDuration = 0.2f;
-    private bool stickyKeyOverride = false;
-
+    private float stickyJumpDuration = 0.2f;
+    private bool stickyJumpOverride = false;
     private bool wasJumping = false;
 
-    public override float getHorizontalInput()
+
+
+    public override float GetHorizontalInput()
     {
         return horizontalInput;
     }
 
-    public override bool getJumpInput()
+    public override bool GetJumpInput()
     {
-        if (stickyKeyOverride)
+        if (stickyJumpOverride)
         {
             return false;
         }
         return shouldJump;
+    }
+
+    public override bool GetAttackInput()
+    {
+        throw new System.NotImplementedException();
     }
 
     private void Update()
@@ -32,7 +40,17 @@ public class PlayerInputManager : InputManager
         wasJumping = shouldJump;
         horizontalInput = Input.GetAxisRaw("Horizontal");
         shouldJump = Input.GetAxisRaw("Vertical") > 0.7f;
+        HandleStickyKeys();
+        
+    }
 
+    private void HandleStickyKeys()
+    {
+        HandleStickyJump();
+    }
+
+    private void HandleStickyJump()
+    {
         if (shouldJump && !wasJumping)
         {
             jumpButtonDownDuration = 0f;
@@ -43,16 +61,15 @@ public class PlayerInputManager : InputManager
             jumpButtonDownDuration += Time.deltaTime;
         }
 
-        if (jumpButtonDownDuration > stickyKeyDuration)
+        if (jumpButtonDownDuration > stickyJumpDuration)
         {
-            stickyKeyOverride = true;
+            stickyJumpOverride = true;
         }
 
         if (!shouldJump)
         {
-            stickyKeyOverride = false;
+            stickyJumpOverride = false;
         }
     }
-
 
 }

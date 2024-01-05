@@ -3,6 +3,7 @@ using System.Collections;
 
 public abstract class InputManager : MonoBehaviour
 {
-    public abstract float getHorizontalInput();
-    public abstract bool getJumpInput();
+    public abstract float GetHorizontalInput();
+    public abstract bool GetJumpInput();
+    public abstract bool GetAttackInput();
 }

@@ -44,8 +44,8 @@ public class MovementController : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
 
-        horizontalMove = inputManager.getHorizontalInput() * runSpeed;
-        shouldJump = inputManager.getJumpInput();
+        horizontalMove = inputManager.GetHorizontalInput() * runSpeed;
+        shouldJump = inputManager.GetJumpInput();
     }
 
     private void FixedUpdate()
