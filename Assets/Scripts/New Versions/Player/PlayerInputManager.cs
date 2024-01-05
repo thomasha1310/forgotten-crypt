@@ -14,7 +14,7 @@ public class PlayerInputManager : InputManager
     private bool stickyJumpOverride = false;
     private bool wasJumping = false;
 
-
+    
 
     public override float GetHorizontalInput()
     {
@@ -32,7 +32,7 @@ public class PlayerInputManager : InputManager
 
     public override bool GetAttackInput()
     {
-        throw new System.NotImplementedException();
+        return shouldAttack;
     }
 
     private void Update()
@@ -40,8 +40,8 @@ public class PlayerInputManager : InputManager
         wasJumping = shouldJump;
         horizontalInput = Input.GetAxisRaw("Horizontal");
         shouldJump = Input.GetAxisRaw("Vertical") > 0.7f;
+        shouldAttack = Input.GetButtonDown("Fire1");        // player input manager does not handle attack cooldown
         HandleStickyKeys();
-        
     }
 
     private void HandleStickyKeys()

@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class WraithInputManager : InputManager
 {
-    public override float getHorizontalInput()
+    public override float GetHorizontalInput()
     {
         throw new System.NotImplementedException();
     }
 
-    public override bool getJumpInput()
+    public override bool GetJumpInput()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override bool GetAttackInput()
     {
         throw new System.NotImplementedException();
     }
