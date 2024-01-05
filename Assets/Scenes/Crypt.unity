@@ -59323,6 +59323,7 @@ GameObject:
   - component: {fileID: 1455425095}
   - component: {fileID: 1455425100}
   - component: {fileID: 1455425099}
+  - component: {fileID: 1455425101}
   - component: {fileID: 1455425097}
   - component: {fileID: 1455425098}
   m_Layer: 8
@@ -59564,6 +59565,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366f22bab4279c5478495494a370fcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1455425101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455425090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72b5f7fafc8a1745a0e12ccb50a9067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2000
+  defense: 500
+  attack: 1000
+  critRatePercent: 5
+  critDamagePercent: 50
+  combatHealPerSecond: 0
+  idleHealPerSecond: 100
+  sendAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1767116977}
+        m_TargetAssemblyTypeName: CombatController, Assembly-CSharp
+        m_MethodName: ReceiveAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  attackCooldown: 1
 --- !u!1 &1495327173
 GameObject:
   m_ObjectHideFlags: 0
@@ -60007,6 +60043,7 @@ GameObject:
   - component: {fileID: 1767116966}
   - component: {fileID: 1767116976}
   - component: {fileID: 1767116975}
+  - component: {fileID: 1767116977}
   - component: {fileID: 1767116969}
   - component: {fileID: 1767116973}
   - component: {fileID: 1767116972}
@@ -60318,6 +60355,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a2894a71ebb46bab863ae125818b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1767116977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767116958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72b5f7fafc8a1745a0e12ccb50a9067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2000
+  defense: 500
+  attack: 1000
+  critRatePercent: 5
+  critDamagePercent: 50
+  combatHealPerSecond: 0
+  idleHealPerSecond: 100
+  sendAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1455425101}
+        m_TargetAssemblyTypeName: CombatController, Assembly-CSharp
+        m_MethodName: ReceiveAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  attackCooldown: 1
 --- !u!1 &1806116341
 GameObject:
   m_ObjectHideFlags: 0

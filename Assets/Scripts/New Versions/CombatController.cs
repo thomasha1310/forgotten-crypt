@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(InputManager))]
 public class CombatController : MonoBehaviour
@@ -19,19 +20,20 @@ public class CombatController : MonoBehaviour
     [SerializeField] private int idleHealPerSecond = 100;
     private float nextHealTime = 0;
 
-
+    public UnityEvent<int> sendAttack;
 
 
     [SerializeField] private float attackCooldown = 1.0f;
     private bool shouldAttack = false;
     private float nextAttackTime = 0;
 
-    public bool inCombat = false;
+    private bool inCombat = false;
 
 
     private void Awake()
     {
         health = maxHealth;
+        sendAttack = new UnityEvent<int>();
     }
 
     private void Update()
@@ -61,9 +63,14 @@ public class CombatController : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            // attack
+            sendAttack.Invoke(attack);
 
             nextAttackTime = Time.time + attackCooldown;
         }
+    }
+
+    public void ReceiveAttack(int damage)
+    {
+
     }
 }
