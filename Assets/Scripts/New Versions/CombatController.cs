@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,9 @@ using UnityEngine.Events;
 public class CombatController : MonoBehaviour
 {
     private InputManager inputManager;
+
+    [SerializeField] private Transform attackSensor;
+    [SerializeField] private float attackRadius;
 
     [SerializeField] private int maxHealth = 2000;
     private int health;
@@ -20,8 +24,8 @@ public class CombatController : MonoBehaviour
     [SerializeField] private int idleHealPerSecond = 100;
     private float nextHealTime = 0;
 
-    public UnityEvent<int> sendAttack;
-
+    public UnityEvent<int, Collider2D[]> sendAttack;
+    public UnityEvent playerDeath;
 
     [SerializeField] private float attackCooldown = 1.0f;
     private bool shouldAttack = false;
@@ -33,7 +37,9 @@ public class CombatController : MonoBehaviour
     private void Awake()
     {
         health = maxHealth;
-        sendAttack = new UnityEvent<int>();
+        sendAttack = new UnityEvent<int, Collider2D[]>();
+        playerDeath = new UnityEvent();
+        inputManager = GetComponent<InputManager>();
     }
 
     private void Update()
@@ -63,14 +69,42 @@ public class CombatController : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            sendAttack.Invoke(attack);
+            Collider2D[] targetsHit = Physics2D.OverlapCircleAll(attackSensor.position, attackRadius);
+
+            int damageDone = attack;
+            if (RollForCrit())
+            {
+                attack += (int)(attack * critDamagePercent / 100f);
+            }
+            sendAttack.Invoke(damageDone, targetsHit);
 
             nextAttackTime = Time.time + attackCooldown;
         }
     }
 
-    public void ReceiveAttack(int damage)
+    private void HandleDeath()
     {
+        playerDeath.Invoke();
+    }
 
+    private bool RollForCrit()
+    {
+        return Random.Range(1, 100) <= critRatePercent;
+    }
+
+    public void ReceiveAttack(int damageDone, Collider2D[] targetsHit)
+    {
+        Collider2D collider = GetComponent<Collider2D>();
+        if (targetsHit.Contains(collider))
+        {
+            float defenseMultiplier = 1f - defense / (defense + 1000f);
+            damageDone = Mathf.RoundToInt(damageDone * defenseMultiplier);
+            health -= damageDone;
+
+            if (health < 0)
+            {
+                HandleDeath();
+            }
+        }
     }
 }
