@@ -24,11 +24,13 @@ public class CombatController : MonoBehaviour
     [SerializeField] private int idleHealPerSecond = 100;
     private float nextHealTime = 0;
 
-    public UnityEvent<int, Collider2D[]> sendAttack;
 
     [SerializeField] private float attackCooldown = 1.0f;
     private bool shouldAttack = false;
     private float nextAttackTime = 0;
+
+    public UnityEvent<int, Collider2D[]> sendAttack;
+
 
     private bool inCombat = false;
 
@@ -71,6 +73,8 @@ public class CombatController : MonoBehaviour
         }
         if (Time.time >= nextAttackTime)
         {
+            Debug.Log("CombatController: attack");
+
             Collider2D[] targetsHit = Physics2D.OverlapCircleAll(attackSensor.position, attackRadius);
 
             int damageDone = attack;
@@ -96,6 +100,7 @@ public class CombatController : MonoBehaviour
 
     public void ReceiveAttack(int damageDone, Collider2D[] targetsHit)
     {
+        Debug.Log(name + " received attack");
         Collider2D collider = GetComponent<Collider2D>();
         if (targetsHit.Contains(collider))
         {

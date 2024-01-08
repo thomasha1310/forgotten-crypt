@@ -48,7 +48,6 @@ public class PlayerInputManager : InputManager
         {
             shouldAttack = false;
         }
-        Debug.Log(shouldAttack);
         HandleStickyKeys();
     }
 

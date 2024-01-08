@@ -59650,6 +59650,7 @@ MonoBehaviour:
   critDamagePercent: 50
   combatHealPerSecond: 0
   idleHealPerSecond: 100
+  attackCooldown: 1
   sendAttack:
     m_PersistentCalls:
       m_Calls:
@@ -59665,7 +59666,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackCooldown: 1
 --- !u!1 &1495327173
 GameObject:
   m_ObjectHideFlags: 0
@@ -60107,10 +60107,10 @@ GameObject:
   - component: {fileID: 1767116962}
   - component: {fileID: 1767116963}
   - component: {fileID: 1767116966}
+  - component: {fileID: 1767116969}
   - component: {fileID: 1767116976}
   - component: {fileID: 1767116975}
   - component: {fileID: 1767116977}
-  - component: {fileID: 1767116969}
   - component: {fileID: 1767116973}
   - component: {fileID: 1767116972}
   - component: {fileID: 1767116971}
@@ -60299,6 +60299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285c0079f60887541881e3d330d810c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idle: {fileID: 7400000, guid: 5e00e075023d340fa983193b7649b524, type: 2}
+  walk: {fileID: 7400000, guid: a732d4cf3dcff4d548621c73131a1527, type: 2}
+  jump: {fileID: 7400000, guid: cf8ff529fe44040708c86ce3e6e49aac, type: 2}
+  fall: {fileID: 7400000, guid: d318f912af56640fdbeffd701c201e91, type: 2}
+  attack: {fileID: 7400000, guid: fc8a251ad1aaf4a48ad6378a47c8d442, type: 2}
 --- !u!114 &1767116970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60443,6 +60448,7 @@ MonoBehaviour:
   critDamagePercent: 50
   combatHealPerSecond: 0
   idleHealPerSecond: 100
+  attackCooldown: 1
   sendAttack:
     m_PersistentCalls:
       m_Calls:
@@ -60461,7 +60467,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1767116969}
         m_TargetAssemblyTypeName: PlayerAnimationController, Assembly-CSharp
         m_MethodName: PlayerAttacks
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -60470,7 +60476,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackCooldown: 1
 --- !u!1 &1806116341
 GameObject:
   m_ObjectHideFlags: 0
