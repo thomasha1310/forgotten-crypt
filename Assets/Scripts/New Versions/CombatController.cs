@@ -25,7 +25,6 @@ public class CombatController : MonoBehaviour
     private float nextHealTime = 0;
 
     public UnityEvent<int, Collider2D[]> sendAttack;
-    public UnityEvent playerDeath;
 
     [SerializeField] private float attackCooldown = 1.0f;
     private bool shouldAttack = false;
@@ -38,7 +37,6 @@ public class CombatController : MonoBehaviour
     {
         health = maxHealth;
         sendAttack = new UnityEvent<int, Collider2D[]>();
-        playerDeath = new UnityEvent();
         inputManager = GetComponent<InputManager>();
     }
 
@@ -67,6 +65,10 @@ public class CombatController : MonoBehaviour
 
     private void HandleAttack()
     {
+        if (!shouldAttack)
+        {
+            return;
+        }
         if (Time.time >= nextAttackTime)
         {
             Collider2D[] targetsHit = Physics2D.OverlapCircleAll(attackSensor.position, attackRadius);
@@ -84,7 +86,7 @@ public class CombatController : MonoBehaviour
 
     private void HandleDeath()
     {
-        playerDeath.Invoke();
+        Debug.Log(name + "died");
     }
 
     private bool RollForCrit()

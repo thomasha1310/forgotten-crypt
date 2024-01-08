@@ -19,4 +19,9 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetBool("IsFalling", rb.velocity.y < -0.01f);
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
+
+    public void PlayerAttacks(int i, Collider2D[] c)
+    {
+        animator.SetTrigger("Attack");
+    }
 }

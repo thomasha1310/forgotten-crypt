@@ -10,7 +10,7 @@ public class PlayerInputManager : InputManager
 
     // variables used for sticky jump key
     private float jumpButtonDownDuration = 0;
-    private float stickyJumpDuration = 0.2f;
+    private readonly float stickyJumpDuration = 0.2f;
     private bool stickyJumpOverride = false;
     private bool wasJumping = false;
 
@@ -40,7 +40,15 @@ public class PlayerInputManager : InputManager
         wasJumping = shouldJump;
         horizontalInput = Input.GetAxisRaw("Horizontal");
         shouldJump = Input.GetAxisRaw("Vertical") > 0.7f;
-        shouldAttack = Input.GetButtonDown("Fire1");        // player input manager does not handle attack cooldown
+        if (!shouldAttack && Input.GetButtonDown("Fire1"))
+        {
+            shouldAttack = true;
+        }
+        else if (shouldAttack && Input.GetButtonUp("Fire1"))
+        {
+            shouldAttack = false;
+        }
+        Debug.Log(shouldAttack);
         HandleStickyKeys();
     }
 

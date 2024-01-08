@@ -6,17 +6,17 @@ public class WraithInputManager : InputManager
 {
     public override float GetHorizontalInput()
     {
-        throw new System.NotImplementedException();
+        return 0;
     }
 
     public override bool GetJumpInput()
     {
-        throw new System.NotImplementedException();
+        return false;
     }
 
     public override bool GetAttackInput()
     {
-        throw new System.NotImplementedException();
+        return false;
     }
 
     void Update()
